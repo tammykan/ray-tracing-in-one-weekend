@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9D6269191C721A17007723C5 /* gtest-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9D6269181C721A17007723C5 /* gtest-all.cc */; };
+		9D62692D1C721B53007723C5 /* Vec3.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D62692C1C721B53007723C5 /* Vec3.h */; };
+		9D62692F1C721B86007723C5 /* Vec3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D62692E1C721B86007723C5 /* Vec3.cpp */; };
+		9D6269371C721BEF007723C5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D6269361C721BEF007723C5 /* main.cpp */; };
+		9D62693F1C721C06007723C5 /* libgtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6269131C7219EC007723C5 /* libgtest.a */; };
+		9D6269401C721C06007723C5 /* libraytracing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6269211C721A95007723C5 /* libraytracing.a */; };
+		9D6269421C721C22007723C5 /* Vec3Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D6269411C721C22007723C5 /* Vec3Test.cpp */; };
+		9D6269441C721D2A007723C5 /* Vec3.h in Sources */ = {isa = PBXBuildFile; fileRef = 9D62692C1C721B53007723C5 /* Vec3.h */; };
+		9D6269451C721D2A007723C5 /* Ray.h in Sources */ = {isa = PBXBuildFile; fileRef = 9D6269431C721CF8007723C5 /* Ray.h */; };
+		9D6269481C721D65007723C5 /* libraytracing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6269211C721A95007723C5 /* libraytracing.a */; };
+		9D62694A1C721F2B007723C5 /* RayTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D6269491C721F2B007723C5 /* RayTest.cpp */; };
+		9D90C81A1C7366C80047390C /* Ray.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D6269431C721CF8007723C5 /* Ray.h */; };
+		9D90C81C1C7367000047390C /* Hitable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D90C81B1C7367000047390C /* Hitable.h */; };
+		9D90C81D1C73674A0047390C /* Hitable.h in Sources */ = {isa = PBXBuildFile; fileRef = 9D90C81B1C7367000047390C /* Hitable.h */; };
+		9D90C81F1C7367B50047390C /* HitableTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D90C81E1C7367B50047390C /* HitableTest.cpp */; };
+		9D90C8211C7368A90047390C /* Sphere.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D90C8201C7368A90047390C /* Sphere.h */; };
+		9D90C8231C7368BF0047390C /* SphereTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D90C8221C7368BF0047390C /* SphereTest.cpp */; };
+		9D90C8251C736A5B0047390C /* HitableList.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D90C8241C736A5B0047390C /* HitableList.h */; };
+		9D90C8271C736A6A0047390C /* HitableListTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D90C8261C736A6A0047390C /* HitableListTest.cpp */; };
+		9DE3E5971C6A16A600682673 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9DE3E5961C6A16A600682673 /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9D62693B1C721C02007723C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DE3E58B1C6A16A600682673 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D6269121C7219EC007723C5;
+			remoteInfo = gtest;
+		};
+		9D62693D1C721C02007723C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DE3E58B1C6A16A600682673 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D6269201C721A95007723C5;
+			remoteInfo = raytracing;
+		};
+		9D6269461C721D5E007723C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DE3E58B1C6A16A600682673 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D6269201C721A95007723C5;
+			remoteInfo = raytracing;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9D6269321C721BEF007723C5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		9DE3E5911C6A16A600682673 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9D6269131C7219EC007723C5 /* libgtest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libgtest.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6269181C721A17007723C5 /* gtest-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "gtest-all.cc"; sourceTree = "<group>"; };
+		9D6269211C721A95007723C5 /* libraytracing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libraytracing.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D62692C1C721B53007723C5 /* Vec3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vec3.h; sourceTree = "<group>"; };
+		9D62692E1C721B86007723C5 /* Vec3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vec3.cpp; sourceTree = "<group>"; };
+		9D6269341C721BEF007723C5 /* unittest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = unittest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6269361C721BEF007723C5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9D6269411C721C22007723C5 /* Vec3Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vec3Test.cpp; sourceTree = "<group>"; };
+		9D6269431C721CF8007723C5 /* Ray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ray.h; sourceTree = "<group>"; };
+		9D6269491C721F2B007723C5 /* RayTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RayTest.cpp; sourceTree = "<group>"; };
+		9D90C81B1C7367000047390C /* Hitable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hitable.h; sourceTree = "<group>"; };
+		9D90C81E1C7367B50047390C /* HitableTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HitableTest.cpp; sourceTree = "<group>"; };
+		9D90C8201C7368A90047390C /* Sphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sphere.h; sourceTree = "<group>"; };
+		9D90C8221C7368BF0047390C /* SphereTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SphereTest.cpp; sourceTree = "<group>"; };
+		9D90C8241C736A5B0047390C /* HitableList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HitableList.h; sourceTree = "<group>"; };
+		9D90C8261C736A6A0047390C /* HitableListTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HitableListTest.cpp; sourceTree = "<group>"; };
+		9DE3E5931C6A16A600682673 /* ray-tracing-weekend */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ray-tracing-weekend"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DE3E5961C6A16A600682673 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9DE3E5AC1C6AD6F400682673 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9DE3E5B01C6AD77400682673 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D6269101C7219EC007723C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D62691E1C721A95007723C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D6269311C721BEF007723C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D62693F1C721C06007723C5 /* libgtest.a in Frameworks */,
+				9D6269401C721C06007723C5 /* libraytracing.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DE3E5901C6A16A600682673 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D6269481C721D65007723C5 /* libraytracing.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9D6269171C721A09007723C5 /* gtest */ = {
+			isa = PBXGroup;
+			children = (
+				9D6269181C721A17007723C5 /* gtest-all.cc */,
+			);
+			name = gtest;
+			sourceTree = "<group>";
+		};
+		9D6269251C721A9B007723C5 /* raytracing */ = {
+			isa = PBXGroup;
+			children = (
+				9D62692C1C721B53007723C5 /* Vec3.h */,
+				9D62692E1C721B86007723C5 /* Vec3.cpp */,
+				9D6269431C721CF8007723C5 /* Ray.h */,
+				9D90C81B1C7367000047390C /* Hitable.h */,
+				9D90C8201C7368A90047390C /* Sphere.h */,
+				9D90C8241C736A5B0047390C /* HitableList.h */,
+			);
+			name = raytracing;
+			sourceTree = "<group>";
+		};
+		9D6269351C721BEF007723C5 /* unittest */ = {
+			isa = PBXGroup;
+			children = (
+				9D6269361C721BEF007723C5 /* main.cpp */,
+				9D6269411C721C22007723C5 /* Vec3Test.cpp */,
+				9D6269491C721F2B007723C5 /* RayTest.cpp */,
+				9D90C81E1C7367B50047390C /* HitableTest.cpp */,
+				9D90C8221C7368BF0047390C /* SphereTest.cpp */,
+				9D90C8261C736A6A0047390C /* HitableListTest.cpp */,
+			);
+			path = unittest;
+			sourceTree = "<group>";
+		};
+		9DE3E58A1C6A16A600682673 = {
+			isa = PBXGroup;
+			children = (
+				9D6269251C721A9B007723C5 /* raytracing */,
+				9D6269171C721A09007723C5 /* gtest */,
+				9DE3E5B01C6AD77400682673 /* README.md */,
+				9DE3E5AC1C6AD6F400682673 /* Cocoa.framework */,
+				9DE3E5951C6A16A600682673 /* ray-tracing-weekend */,
+				9D6269351C721BEF007723C5 /* unittest */,
+				9DE3E5941C6A16A600682673 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9DE3E5941C6A16A600682673 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DE3E5931C6A16A600682673 /* ray-tracing-weekend */,
+				9D6269131C7219EC007723C5 /* libgtest.a */,
+				9D6269211C721A95007723C5 /* libraytracing.a */,
+				9D6269341C721BEF007723C5 /* unittest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9DE3E5951C6A16A600682673 /* ray-tracing-weekend */ = {
+			isa = PBXGroup;
+			children = (
+				9DE3E5961C6A16A600682673 /* main.cpp */,
+			);
+			path = "ray-tracing-weekend";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9D6269111C7219EC007723C5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D62691F1C721A95007723C5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D90C81A1C7366C80047390C /* Ray.h in Headers */,
+				9D90C8211C7368A90047390C /* Sphere.h in Headers */,
+				9D62692D1C721B53007723C5 /* Vec3.h in Headers */,
+				9D90C8251C736A5B0047390C /* HitableList.h in Headers */,
+				9D90C81C1C7367000047390C /* Hitable.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9D6269121C7219EC007723C5 /* gtest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D6269141C7219EC007723C5 /* Build configuration list for PBXNativeTarget "gtest" */;
+			buildPhases = (
+				9D62690F1C7219EC007723C5 /* Sources */,
+				9D6269101C7219EC007723C5 /* Frameworks */,
+				9D6269111C7219EC007723C5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gtest;
+			productName = gtest;
+			productReference = 9D6269131C7219EC007723C5 /* libgtest.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		9D6269201C721A95007723C5 /* raytracing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D6269221C721A95007723C5 /* Build configuration list for PBXNativeTarget "raytracing" */;
+			buildPhases = (
+				9D62691D1C721A95007723C5 /* Sources */,
+				9D62691E1C721A95007723C5 /* Frameworks */,
+				9D62691F1C721A95007723C5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = raytracing;
+			productName = raytracing;
+			productReference = 9D6269211C721A95007723C5 /* libraytracing.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		9D6269331C721BEF007723C5 /* unittest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D6269381C721BEF007723C5 /* Build configuration list for PBXNativeTarget "unittest" */;
+			buildPhases = (
+				9D6269301C721BEF007723C5 /* Sources */,
+				9D6269311C721BEF007723C5 /* Frameworks */,
+				9D6269321C721BEF007723C5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D62693C1C721C02007723C5 /* PBXTargetDependency */,
+				9D62693E1C721C02007723C5 /* PBXTargetDependency */,
+			);
+			name = unittest;
+			productName = unittest;
+			productReference = 9D6269341C721BEF007723C5 /* unittest */;
+			productType = "com.apple.product-type.tool";
+		};
+		9DE3E5921C6A16A600682673 /* ray-tracing-weekend */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DE3E59A1C6A16A600682673 /* Build configuration list for PBXNativeTarget "ray-tracing-weekend" */;
+			buildPhases = (
+				9DE3E58F1C6A16A600682673 /* Sources */,
+				9DE3E5901C6A16A600682673 /* Frameworks */,
+				9DE3E5911C6A16A600682673 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D6269471C721D5E007723C5 /* PBXTargetDependency */,
+			);
+			name = "ray-tracing-weekend";
+			productName = "ray-tracing-weekend";
+			productReference = 9DE3E5931C6A16A600682673 /* ray-tracing-weekend */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9DE3E58B1C6A16A600682673 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Sun, Joy (Agoda)";
+				TargetAttributes = {
+					9D6269121C7219EC007723C5 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					9D6269201C721A95007723C5 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					9D6269331C721BEF007723C5 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					9DE3E5921C6A16A600682673 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = 9DE3E58E1C6A16A600682673 /* Build configuration list for PBXProject "ray-tracing-weekend" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9DE3E58A1C6A16A600682673;
+			productRefGroup = 9DE3E5941C6A16A600682673 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9DE3E5921C6A16A600682673 /* ray-tracing-weekend */,
+				9D6269121C7219EC007723C5 /* gtest */,
+				9D6269201C721A95007723C5 /* raytracing */,
+				9D6269331C721BEF007723C5 /* unittest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9D62690F1C7219EC007723C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D6269191C721A17007723C5 /* gtest-all.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D62691D1C721A95007723C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D90C81D1C73674A0047390C /* Hitable.h in Sources */,
+				9D6269441C721D2A007723C5 /* Vec3.h in Sources */,
+				9D6269451C721D2A007723C5 /* Ray.h in Sources */,
+				9D62692F1C721B86007723C5 /* Vec3.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D6269301C721BEF007723C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D6269421C721C22007723C5 /* Vec3Test.cpp in Sources */,
+				9D90C81F1C7367B50047390C /* HitableTest.cpp in Sources */,
+				9D6269371C721BEF007723C5 /* main.cpp in Sources */,
+				9D90C8271C736A6A0047390C /* HitableListTest.cpp in Sources */,
+				9D62694A1C721F2B007723C5 /* RayTest.cpp in Sources */,
+				9D90C8231C7368BF0047390C /* SphereTest.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DE3E58F1C6A16A600682673 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DE3E5971C6A16A600682673 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9D62693C1C721C02007723C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D6269121C7219EC007723C5 /* gtest */;
+			targetProxy = 9D62693B1C721C02007723C5 /* PBXContainerItemProxy */;
+		};
+		9D62693E1C721C02007723C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D6269201C721A95007723C5 /* raytracing */;
+			targetProxy = 9D62693D1C721C02007723C5 /* PBXContainerItemProxy */;
+		};
+		9D6269471C721D5E007723C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D6269201C721A95007723C5 /* raytracing */;
+			targetProxy = 9D6269461C721D5E007723C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9D6269151C7219EC007723C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/Users/jsun/code/googletest-read-only /Users/jsun/code/googletest-read-only/include";
+			};
+			name = Debug;
+		};
+		9D6269161C7219EC007723C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/Users/jsun/code/googletest-read-only /Users/jsun/code/googletest-read-only/include";
+			};
+			name = Release;
+		};
+		9D6269231C721A95007723C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9D6269241C721A95007723C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9D6269391C721BEF007723C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				HEADER_SEARCH_PATHS = "/Users/jsun/code/googletest-read-only/include";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9D62693A1C721BEF007723C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				HEADER_SEARCH_PATHS = "/Users/jsun/code/googletest-read-only/include";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9DE3E5981C6A16A600682673 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9DE3E5991C6A16A600682673 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9DE3E59B1C6A16A600682673 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9DE3E59C1C6A16A600682673 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9D6269141C7219EC007723C5 /* Build configuration list for PBXNativeTarget "gtest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D6269151C7219EC007723C5 /* Debug */,
+				9D6269161C7219EC007723C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D6269221C721A95007723C5 /* Build configuration list for PBXNativeTarget "raytracing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D6269231C721A95007723C5 /* Debug */,
+				9D6269241C721A95007723C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D6269381C721BEF007723C5 /* Build configuration list for PBXNativeTarget "unittest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D6269391C721BEF007723C5 /* Debug */,
+				9D62693A1C721BEF007723C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DE3E58E1C6A16A600682673 /* Build configuration list for PBXProject "ray-tracing-weekend" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DE3E5981C6A16A600682673 /* Debug */,
+				9DE3E5991C6A16A600682673 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DE3E59A1C6A16A600682673 /* Build configuration list for PBXNativeTarget "ray-tracing-weekend" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DE3E59B1C6A16A600682673 /* Debug */,
+				9DE3E59C1C6A16A600682673 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9DE3E58B1C6A16A600682673 /* Project object */;
+}
