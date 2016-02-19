@@ -27,6 +27,8 @@
 		9D90C8251C736A5B0047390C /* HitableList.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D90C8241C736A5B0047390C /* HitableList.h */; };
 		9D90C8271C736A6A0047390C /* HitableListTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D90C8261C736A6A0047390C /* HitableListTest.cpp */; };
 		9DE3E5971C6A16A600682673 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9DE3E5961C6A16A600682673 /* main.cpp */; };
+		9DFCF4931C76A3AE00617989 /* Camera.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DFCF4921C76A3AE00617989 /* Camera.h */; };
+		9DFCF4951C76A43600617989 /* CameraTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9DFCF4941C76A43600617989 /* CameraTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		9DE3E5961C6A16A600682673 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9DE3E5AC1C6AD6F400682673 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9DE3E5B01C6AD77400682673 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9DFCF4921C76A3AE00617989 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		9DFCF4941C76A43600617989 /* CameraTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 				9D90C81B1C7367000047390C /* Hitable.h */,
 				9D90C8201C7368A90047390C /* Sphere.h */,
 				9D90C8241C736A5B0047390C /* HitableList.h */,
+				9DFCF4921C76A3AE00617989 /* Camera.h */,
 			);
 			name = raytracing;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				9D90C81E1C7367B50047390C /* HitableTest.cpp */,
 				9D90C8221C7368BF0047390C /* SphereTest.cpp */,
 				9D90C8261C736A6A0047390C /* HitableListTest.cpp */,
+				9DFCF4941C76A43600617989 /* CameraTest.cpp */,
 			);
 			path = unittest;
 			sourceTree = "<group>";
@@ -215,6 +221,7 @@
 				9D90C81A1C7366C80047390C /* Ray.h in Headers */,
 				9D90C8211C7368A90047390C /* Sphere.h in Headers */,
 				9D62692D1C721B53007723C5 /* Vec3.h in Headers */,
+				9DFCF4931C76A3AE00617989 /* Camera.h in Headers */,
 				9D90C8251C736A5B0047390C /* HitableList.h in Headers */,
 				9D90C81C1C7367000047390C /* Hitable.h in Headers */,
 			);
@@ -367,6 +374,7 @@
 				9D90C8271C736A6A0047390C /* HitableListTest.cpp in Sources */,
 				9D62694A1C721F2B007723C5 /* RayTest.cpp in Sources */,
 				9D90C8231C7368BF0047390C /* SphereTest.cpp in Sources */,
+				9DFCF4951C76A43600617989 /* CameraTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

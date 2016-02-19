@@ -7,7 +7,7 @@
 //
 
 #include <iostream>
-#include "Ray.h"
+#include "Camera.h"
 #include "Sphere.h"
 #include "HitableList.h"
 #include "float.h"
@@ -32,14 +32,12 @@ int main(int argc, const char * argv[]) {
  
     int nx = 200;
     int ny = 100;
+    int ns = 100;
     
     
     std::cout << "P3\n" << nx << " " << ny << "\n255\n";
     
-    Vec3 lower_left_corner(-2,-1,-1);
-    Vec3 horizontal(4,0,0);
-    Vec3 vertical(0,2,0);
-    Vec3 origin(0,0,0);
+    Camera cam;
     
     Hitable *list[2];
     list[0] = new Sphere(Vec3(0,0,-1),0.5);
@@ -48,11 +46,19 @@ int main(int argc, const char * argv[]) {
     
     for (int j = ny - 1; j >= 0; j--) {
         for (int i = 0; i < nx; i++) {
-            float u = float(i)/float(nx);
-            float v = float(j)/float(ny);
-            Ray ray(origin, lower_left_corner + horizontal*u + vertical*v);
+            Vec3 col(0,0,0);
             
-            Vec3 col = color(ray, world);
+            for (int s = 0; s < ns; s++) {
+                // anti-aliasing: take ns samples in each pixel and average the color
+                float u = float(i + drand48())/float(nx);
+                float v = float(j + drand48())/float(ny);
+                Ray ray = cam.get_ray(u, v);
+                
+                col = col + color(ray, world);
+            }
+            
+            col = col / ns;
+
             
             int ir = int(255.99 * col[0]);
             int ig = int(255.99 * col[1]);
