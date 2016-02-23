@@ -25,6 +25,8 @@ public:
     Ray get_ray(float u, float v) { return Ray(origin, lower_left_corner + horizontal*u + vertical*v - origin);}
     
     
+    
+    
     Vec3 origin;
     Vec3 lower_left_corner;
     Vec3 horizontal;

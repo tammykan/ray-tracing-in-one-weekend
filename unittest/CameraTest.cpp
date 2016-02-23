@@ -11,4 +11,6 @@
 #include "Camera.h"
 
 TEST(CameraTest, DummyTest){
+    
+    
 }

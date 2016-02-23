@@ -12,12 +12,28 @@
 #include "HitableList.h"
 #include "float.h"
 
+
+Vec3 random_point_in_unit_sphere(){
+    Vec3 p;
+    do{
+        p = Vec3(drand48(), drand48(), drand48()) * 2.0 - Vec3(1, 1, 1); // -1 < p < 1
+    }while (p.dot(p) >= 1.0);
+    
+    return p;
+}
+
+
 Vec3 color(Ray &ray, Hitable *world){
     
     hit_record rec;
     
-    if (world->hit(ray, 0, MAXFLOAT, rec)) { // hit: visualize normal
-        return Vec3(rec.normal.x() +1, rec.normal.y()+1, rec.normal.z()+1) * 0.5;
+    if (world->hit(ray, 0.0, MAXFLOAT, rec)) { // hit: visualize normal
+        // diffuse: pick a random point in the hit unit sphere
+        Vec3 target = rec.p + rec.normal + random_point_in_unit_sphere();
+        
+        Ray new_ray = Ray(rec.p, target - rec.p);
+        
+        return color(new_ray, world) * 0.5;
     }
     else{ // not hit, blue to white blend
         Vec3 unit_direction = ray.direction().unit_vector();
@@ -57,7 +73,10 @@ int main(int argc, const char * argv[]) {
                 col = col + color(ray, world);
             }
             
-            col = col / ns;
+            col = col / float(ns);
+            
+            // gamma-2 correction
+            col = Vec3(sqrt(col[0]), sqrt(col[1]), sqrt(col[2]));
 
             
             int ir = int(255.99 * col[0]);

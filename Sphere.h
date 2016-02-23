@@ -24,21 +24,22 @@ public:
 };
 
 bool Sphere::hit(Ray &ray, float t_min, float t_max, hit_record &rec) const{
+    Vec3 oc = ray.origin() - center;
     float a = ray.direction().dot(ray.direction());
-    float b = 2 * ray.direction().dot(ray.origin() - center);
-    float c = center.dot(center) - radius*radius;
+    float b = oc.dot(ray.direction());
+    float c = oc.dot(oc) - radius*radius;
     
-    float discriminant = b*b - 4*a*c;
+    float discriminant = b*b - a*c;
     
     if (discriminant > 0) {
-        float temp = (-b - sqrt(discriminant)) / (2*a);
+        float temp = (-b - sqrt(discriminant)) / a;
         if (temp < t_max && temp > t_min) {
             rec.t = temp;
             rec.p = ray.point_at_parameter(rec.t);
             rec.normal = (rec.p - center) / radius;
             return true;
         }
-        temp = (-b + sqrt(discriminant)) / (2*a);
+        temp = (-b + sqrt(discriminant)) / a;
         if (temp < t_max && temp > t_min) {
             rec.t = temp;
             rec.p = ray.point_at_parameter(rec.t);
