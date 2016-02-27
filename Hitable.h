@@ -29,6 +29,10 @@ class Material
 {
 public:
     virtual bool scatter(Ray &r_in, hit_record &rec, Vec3 &attenuation, Ray& scattered) const = 0;
+    
+    Vec3 reflect(Vec3 &v, Vec3 &n) const{
+        return v - n * (v.dot(n) * 2);
+    }
 };
 
 class Lambertian:public Material{
@@ -53,9 +57,8 @@ public:
     virtual bool scatter(Ray &r_in, hit_record &rec, Vec3 &attenuation, Ray& scattered) const{
      
         Vec3 v = r_in.direction().unit_vector();
-        Vec3 n = rec.normal;
+        Vec3 reflected = reflect(v, rec.normal);
         
-        Vec3 reflected = v - n * (v.dot(n) * 2);
         scattered = Ray(rec.p, reflected + r_in.random_point_in_unit_sphere()*fuzz);
         attenuation = albedo;
         return (scattered.direction().dot(rec.normal) > 0);
