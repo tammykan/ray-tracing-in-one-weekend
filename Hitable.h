@@ -48,7 +48,7 @@ public:
 class Metal:public Material{
 public:
     
-    Metal(const Vec3& e):albedo(e){}
+    Metal(const Vec3& e, float f):albedo(e){if (f < 1) fuzz = f; else fuzz = 1;}
     
     virtual bool scatter(Ray &r_in, hit_record &rec, Vec3 &attenuation, Ray& scattered) const{
      
@@ -56,7 +56,7 @@ public:
         Vec3 n = rec.normal;
         
         Vec3 reflected = v - n * (v.dot(n) * 2);
-        scattered = Ray(rec.p, reflected);
+        scattered = Ray(rec.p, reflected + r_in.random_point_in_unit_sphere()*fuzz);
         attenuation = albedo;
         return (scattered.direction().dot(rec.normal) > 0);
         
@@ -64,6 +64,7 @@ public:
     
     
     Vec3 albedo;
+    float fuzz;
 };
 
 #endif /* Hitable_h */
