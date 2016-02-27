@@ -5,6 +5,7 @@
 //  Created by Sun, Joy (Agoda) on 2/16/2559 BE.
 //  Copyright © 2559 Sun, Joy (Agoda). All rights reserved.
 //
+#pragma once
 
 #ifndef HitableList_h
 #define HitableList_h

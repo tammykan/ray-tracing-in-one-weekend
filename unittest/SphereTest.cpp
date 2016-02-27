@@ -13,7 +13,7 @@
 
 TEST(SphereTest, HitTest){
     
-    Sphere s = Sphere(Vec3(1, 1, 0), 1);
+    Sphere s = Sphere(Vec3(1, 1, 0), 1, new Lambertian(Vec3(0.8, 0.3, 0.3)));
     Ray r = Ray(Vec3(-1, 1, 0), Vec3(1, 0, 0));
     
     hit_record rec;

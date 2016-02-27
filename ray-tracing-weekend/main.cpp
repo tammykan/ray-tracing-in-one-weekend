@@ -23,17 +23,19 @@ Vec3 random_point_in_unit_sphere(){
 }
 
 
-Vec3 color(Ray &ray, Hitable *world){
+Vec3 color(Ray &ray, Hitable *world, int depth){
     
     hit_record rec;
     
-    if (world->hit(ray, 0.0, MAXFLOAT, rec)) { // hit: visualize normal
-        // diffuse: pick a random point in the hit unit sphere
-        Vec3 target = rec.p + rec.normal + random_point_in_unit_sphere();
-        
-        Ray new_ray = Ray(rec.p, target - rec.p);
-        
-        return color(new_ray, world) * 0.5;
+    if (world->hit(ray, 0.001, MAXFLOAT, rec)) {
+        Ray scattered;
+        Vec3 attenuation;
+        if (depth < 50 && rec.mat_ptr->scatter(ray, rec, attenuation, scattered)) {
+            return attenuation*color(scattered, world, depth+1);
+        }
+        else{
+            return Vec3(0, 0, 0);
+        }
     }
     else{ // not hit, blue to white blend
         Vec3 unit_direction = ray.direction().unit_vector();
@@ -55,10 +57,15 @@ int main(int argc, const char * argv[]) {
     
     Camera cam;
     
-    Hitable *list[2];
-    list[0] = new Sphere(Vec3(0,0,-1),0.5);
-    list[1] = new Sphere(Vec3(0, -100.5, -1),100);
-    Hitable *world = new HitableList(list,2);
+    Hitable *list[4];
+    
+    list[0] = new Sphere(Vec3(0, 0, -1), 0.5, new Lambertian(Vec3(0.8, 0.3, 0.3)));
+    list[1] = new Sphere(Vec3(0, -100.5, -1), 100, new Lambertian(Vec3(0.8, 0.8, 0.0)));
+    list[2] = new Sphere(Vec3(1,0,-1), 0.5, new Metal(Vec3(0.8, 0.6, 0.2)));
+    list[3] = new Sphere(Vec3(-1, 0, -1), 0.5, new Metal(Vec3(0.8, 0.8, 0.8)));
+    
+    
+    Hitable *world = new HitableList(list,4);
     
     for (int j = ny - 1; j >= 0; j--) {
         for (int i = 0; i < nx; i++) {
@@ -70,7 +77,7 @@ int main(int argc, const char * argv[]) {
                 float v = float(j + drand48())/float(ny);
                 Ray ray = cam.get_ray(u, v);
                 
-                col = col + color(ray, world);
+                col = col + color(ray, world, 0);
             }
             
             col = col / float(ns);
