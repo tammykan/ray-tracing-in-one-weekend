@@ -33,6 +33,20 @@ public:
     Vec3 reflect(Vec3 &v, Vec3 &n) const{
         return v - n * (v.dot(n) * 2);
     }
+    
+    bool refract(Vec3 &v, Vec3 &n, float ni_over_nt, Vec3 &refracted) const{
+        Vec3 uv = v.unit_vector();
+        Vec3 un = n.unit_vector();
+        float dt = uv.dot(un);
+        
+        float discriminant = 1.0 - ni_over_nt * ni_over_nt * (1 - dt*dt);
+        if (discriminant > 0) {
+            refracted = (uv - n*dt)*ni_over_nt - n*sqrt(discriminant);
+            return true;
+        }
+        else
+            return false;
+    }
 };
 
 class Lambertian:public Material{
@@ -68,6 +82,44 @@ public:
     
     Vec3 albedo;
     float fuzz;
+};
+
+class Dielectric:public Material{
+public:
+    
+    Dielectric(float ri): ref_idx(ri){}
+    
+    virtual bool scatter(Ray &r_in, hit_record &rec, Vec3 &attenuation, Ray& scattered) const{
+     
+        Vec3 outward_normal;
+        Vec3 r_in_direction = r_in.direction();
+        Vec3 reflected = reflect(r_in_direction, rec.normal);
+        
+        float ni_over_nt;
+        attenuation = Vec3(1.0, 1.0, 1.0);
+        Vec3 refracted;
+        
+        if (r_in_direction.dot(rec.normal) > 0) {
+            outward_normal = rec.normal * -1;
+            ni_over_nt = ref_idx;
+        }else{
+            outward_normal = rec.normal;
+            ni_over_nt = 1.0 / ref_idx;
+        }
+        
+        if (refract(r_in_direction, outward_normal, ni_over_nt, refracted)) {
+            scattered = Ray(rec.p, refracted);
+        }else{
+            scattered = Ray(rec.p, reflected);
+            return false;
+        }
+        return true;
+        
+    }
+    
+    
+    
+    float ref_idx;
 };
 
 #endif /* Hitable_h */

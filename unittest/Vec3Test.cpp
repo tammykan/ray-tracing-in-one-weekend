@@ -13,6 +13,15 @@ TEST(Vec3Test, BasicMath){
     float t = 2.0;
     Vec3 d = a*t+b;
     EXPECT_EQ(d.e[0], 2*1+4);
+    
+    Vec3 e(4,5,6);
+    Vec3 minus_e = e*(-1.0);
+    EXPECT_EQ(e.e[0], 4);
+    EXPECT_EQ(e.e[1], 5);
+    EXPECT_EQ(e.e[2], 6);
+    EXPECT_EQ(minus_e.e[0], -4);
+    EXPECT_EQ(minus_e.e[1], -5);
+    EXPECT_EQ(minus_e.e[2], -6);
 
 }
 
