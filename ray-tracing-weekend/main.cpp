@@ -63,6 +63,7 @@ int main(int argc, const char * argv[]) {
     list[1] = new Sphere(Vec3(0, -100.5, -1), 100, new Lambertian(Vec3(0.8, 0.8, 0.0)));
     list[2] = new Sphere(Vec3(1,0,-1), 0.5, new Metal(Vec3(0.8, 0.6, 0.2), 0));
     list[3] = new Sphere(Vec3(-1, 0, -1), 0.5, new Dielectric(1.5));
+    list[4] =new Sphere(Vec3(-1, 0, -1), -0.45, new Dielectric(1.5));
     
     
     Hitable *world = new HitableList(list,4);

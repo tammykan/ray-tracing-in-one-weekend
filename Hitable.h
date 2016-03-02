@@ -47,6 +47,13 @@ public:
         else
             return false;
     }
+    
+    float schlick(float cosine, float ref_idx) const{
+        float r0 = (1 - ref_idx) / (1+ref_idx);
+        r0 = r0*r0;
+        return r0+ (1-r0)*pow((1-cosine), 5);
+    }
+    
 };
 
 class Lambertian:public Material{
@@ -98,21 +105,38 @@ public:
         float ni_over_nt;
         attenuation = Vec3(1.0, 1.0, 1.0);
         Vec3 refracted;
+        float reflect_prob;;
+        float cosine;
         
         if (r_in_direction.dot(rec.normal) > 0) {
             outward_normal = rec.normal * -1;
             ni_over_nt = ref_idx;
+            
+            float a = r_in_direction.dot(rec.normal) * ref_idx;
+            float b = r_in_direction.length();
+            cosine = a/b;
+            
         }else{
             outward_normal = rec.normal;
             ni_over_nt = 1.0 / ref_idx;
+            float a = r_in_direction.dot(rec.normal) * ref_idx;
+            float b = r_in_direction.length();
+            cosine = -a/b;
         }
         
         if (refract(r_in_direction, outward_normal, ni_over_nt, refracted)) {
-            scattered = Ray(rec.p, refracted);
+            reflect_prob = schlick(cosine, ref_idx);
         }else{
-            scattered = Ray(rec.p, reflected);
-            return false;
+            reflect_prob = 1.0;
         }
+        
+        if (drand48() < reflect_prob) {
+            scattered = Ray(rec.p, reflected);
+        }
+        else{
+            scattered = Ray(rec.p, refracted);
+        }
+        
         return true;
         
     }
