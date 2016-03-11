@@ -15,15 +15,24 @@
 class Camera{
 public:
     
-    Camera(float vfov, float aspect){
+    Camera(Vec3 lookFrom, Vec3 lookAt, Vec3 vup, float vfov, float aspect){
+        
+        Vec3 u,v,w;
         
         float theta = vfov*M_PI/180;
         float half_height = tanf(theta/2);
         float half_width = aspect*half_height;
-        lower_left_corner = Vec3(-half_width, -half_height, -1);
-        origin = Vec3(0, 0, 0);
-        horizontal = Vec3(2*half_width, 0, 0);
-        vertical = Vec3(0, 2*half_height, 0);
+        
+        origin = lookFrom;
+        // orthogonal basis for camera
+        w = (lookFrom - lookAt).unit_vector();
+        u = vup.cross(vup, w).unit_vector();
+        v = w.cross(w, u);
+        
+        lower_left_corner = origin - u*half_width - v*half_height-w; // why -w?
+        
+        horizontal = u * (2*half_width);
+        vertical = v * (2*half_height);
     }
     
     Ray get_ray(float u, float v) { return Ray(origin, lower_left_corner + horizontal*u + vertical*v - origin);}
