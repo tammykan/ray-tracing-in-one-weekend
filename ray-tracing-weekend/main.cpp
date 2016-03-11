@@ -55,7 +55,12 @@ int main(int argc, const char * argv[]) {
     
     std::cout << "P3\n" << nx << " " << ny << "\n255\n";
     
-    Camera cam(Vec3(-1, 1, 1), Vec3(0, 0, -1), Vec3(0, 1, 0), 90,float(nx)/float(ny));
+    Vec3 lookFrom = Vec3(3, 3, 2);
+    Vec3 lookAt = Vec3(0, 0, -1);
+    float dist_to_focus = (lookFrom - lookAt).length();
+    float aperture = 2.0;
+    
+    Camera cam(lookFrom, lookAt, Vec3(0, 1, 0), 20,float(nx)/float(ny), aperture, dist_to_focus);
     
     float R = cos(M_PI/4);
     
