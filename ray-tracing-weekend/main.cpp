@@ -11,6 +11,56 @@
 #include "Sphere.h"
 #include "HitableList.h"
 #include "float.h"
+#include <fstream>
+#include <ctime>
+
+tm *get_current_time(){
+
+    time_t currentTime;
+    struct tm *localTime;
+    
+    time( &currentTime );
+    localTime = localtime( &currentTime );
+    
+    return localTime;
+}
+
+
+Hitable *hitable_scene(){
+    
+    int n = 500;
+    
+    Hitable **list = new Hitable*[n+1];
+    
+    list[0] = new Sphere(Vec3(0, -1000, 0),1000,new Lambertian(Vec3(0.5, 0.5, 0.5)));
+    
+    int i = 1;
+    for (int a = -11; a < 11; a++) {
+        for (int b = -11; b < 11; b++) {
+            float choose_mat = drand48();
+            Vec3 center(a+0.9*drand48(), 0.2, b+0.9*drand48());
+            if ((center-Vec3(4, 0.2, 0)).length() > 0.9) {
+                if (choose_mat < 0.0) {//diffuse
+                    list[i++] = new Sphere(center,0.2, new Lambertian(Vec3(drand48()*drand48(), drand48()*drand48(), drand48()*drand48())));
+                }
+                else if (choose_mat < 0.95){//metal
+                    list[i++] = new Sphere(center,0.2,
+                                           new Metal(Vec3(0.5*(1+drand48()), 0.5*(1+drand48()), 0.5*(1+drand48())), 0.5*drand48()));
+                }
+                else{//glass
+                    list[i++] = new Sphere(center,0.2, new Dielectric(1.5));
+                }
+            }
+        }
+    }
+    
+    list[i++] = new Sphere(Vec3(0, 1, 0),1.0,new Dielectric(1.5));
+    list[i++] = new Sphere(Vec3(-4, 1, 0), 1.0, new Lambertian(Vec3(0.4, 0.2, 0.1)));
+    list[i++] = new Sphere(Vec3(4, 1, 0), 1.0, new Metal(Vec3(0.7, 0.6, 0.5),0.0));
+    
+    
+    return new HitableList(list,i);
+}
 
 
 Vec3 random_point_in_unit_sphere(){
@@ -47,15 +97,21 @@ Vec3 color(Ray &ray, Hitable *world, int depth){
 
 
 int main(int argc, const char * argv[]) {
+    
+    std::cout << "started...\n";
+    
+    std::ofstream myfile;
+    
+    myfile.open("output.ppm");
  
-    int nx = 200;
-    int ny = 100;
+    int nx = 400;
+    int ny = 300;
     int ns = 100;
     
     
-    std::cout << "P3\n" << nx << " " << ny << "\n255\n";
+    myfile << "P3\n" << nx << " " << ny << "\n255\n";
     
-    Vec3 lookFrom = Vec3(3, 3, 2);
+    Vec3 lookFrom = Vec3(20, 20, 2);
     Vec3 lookAt = Vec3(0, 0, -1);
     float dist_to_focus = (lookFrom - lookAt).length();
     float aperture = 2.0;
@@ -77,10 +133,20 @@ int main(int argc, const char * argv[]) {
     list[4] =new Sphere(Vec3(-1, 0, -1), -0.45, new Dielectric(1.5));
     
     
-    Hitable *world = new HitableList(list,5);
+    //Hitable *world = new HitableList(list,5);
+    Hitable *world = hitable_scene();
+    
+    tm *now = get_current_time();
+    std::cout << "world generated   " << now->tm_hour << ":" << now->tm_min << ":" << now->tm_sec << "\n";
     
     for (int j = ny - 1; j >= 0; j--) {
+        
+        now = get_current_time();
+        
+        std::cout << j << "   " << now->tm_hour << ":" << now->tm_min << ":" << now->tm_sec << "\n";
+        
         for (int i = 0; i < nx; i++) {
+            
             Vec3 col(0,0,0);
             
             for (int s = 0; s < ns; s++) {
@@ -102,8 +168,12 @@ int main(int argc, const char * argv[]) {
             int ig = int(255.99 * col[1]);
             int ib = int(255.99 * col[2]);
             
-            std::cout << ir << " " << ig << " " << ib << "\n";
+            myfile << ir << " " << ig << " " << ib << "\n";
         }
     }
+    
+    myfile.close();
+    
+    std::cout << "done!\n";
     
 }

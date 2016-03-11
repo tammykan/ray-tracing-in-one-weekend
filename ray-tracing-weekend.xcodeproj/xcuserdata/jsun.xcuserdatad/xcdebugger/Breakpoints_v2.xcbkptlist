@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ray-tracing-weekend/main.cpp"
-            timestampString = "477931848.671634"
+            timestampString = "479401923.501872"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "color(Ray &amp;ray, Hitable *world, int depth)"
             landmarkType = "7">
          </BreakpointContent>
