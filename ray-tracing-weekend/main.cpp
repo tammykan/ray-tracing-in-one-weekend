@@ -55,18 +55,18 @@ int main(int argc, const char * argv[]) {
     
     std::cout << "P3\n" << nx << " " << ny << "\n255\n";
     
-    Camera cam;
+    Camera cam(90,nx/ny);
     
-    Hitable *list[4];
+    float R = cos(M_PI/4);
     
-    list[0] = new Sphere(Vec3(0, 0, -1), 0.5, new Lambertian(Vec3(0.1,0.2,0.5)));
-    list[1] = new Sphere(Vec3(0, -100.5, -1), 100, new Lambertian(Vec3(0.8, 0.8, 0.0)));
-    list[2] = new Sphere(Vec3(1,0,-1), 0.5, new Metal(Vec3(0.8, 0.6, 0.2), 0));
-    list[3] = new Sphere(Vec3(-1, 0, -1), 0.5, new Dielectric(1.5));
-    list[4] =new Sphere(Vec3(-1, 0, -1), -0.45, new Dielectric(1.5));
+    Hitable *list[2];
+    
+    list[0] = new Sphere(Vec3(-R, 0, -1), R, new Lambertian(Vec3(0, 0, 1)));
+    list[1] = new Sphere(Vec3(R, 0, -1), R, new Lambertian(Vec3(1, 0, 0)));
+                         
     
     
-    Hitable *world = new HitableList(list,4);
+    Hitable *world = new HitableList(list,2);
     
     for (int j = ny - 1; j >= 0; j--) {
         for (int i = 0; i < nx; i++) {

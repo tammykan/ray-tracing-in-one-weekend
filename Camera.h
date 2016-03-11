@@ -15,12 +15,15 @@
 class Camera{
 public:
     
-    Camera(){
-        origin = Vec3(0,0,0);
-        lower_left_corner = Vec3(-2,-1,-1);
-        horizontal = Vec3(4,0,0);
-        vertical = Vec3(0,2,0);
+    Camera(float vfov, float aspect){
         
+        float theta = vfov*M_PI/180;
+        float half_height = tanf(theta/2);
+        float half_width = aspect*half_height;
+        lower_left_corner = Vec3(-half_width, -half_height, -1);
+        origin = Vec3(0, 0, 0);
+        horizontal = Vec3(2*half_width, 0, 0);
+        vertical = Vec3(0, 2*half_height, 0);
     }
     
     Ray get_ray(float u, float v) { return Ray(origin, lower_left_corner + horizontal*u + vertical*v - origin);}
