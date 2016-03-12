@@ -93,6 +93,7 @@
 		9D90C8221C7368BF0047390C /* SphereTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SphereTest.cpp; sourceTree = "<group>"; };
 		9D90C8241C736A5B0047390C /* HitableList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HitableList.h; sourceTree = "<group>"; };
 		9D90C8261C736A6A0047390C /* HitableListTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HitableListTest.cpp; sourceTree = "<group>"; };
+		9DCFF9DF1C93B0BE0023FBD6 /* output.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = output.png; sourceTree = "<group>"; };
 		9DE3E5931C6A16A600682673 /* ray-tracing-weekend */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ray-tracing-weekend"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DE3E5961C6A16A600682673 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9DE3E5AC1C6AD6F400682673 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -175,6 +176,7 @@
 		9DE3E58A1C6A16A600682673 = {
 			isa = PBXGroup;
 			children = (
+				9DCFF9DF1C93B0BE0023FBD6 /* output.png */,
 				9D6269251C721A9B007723C5 /* raytracing */,
 				9D6269171C721A09007723C5 /* gtest */,
 				9DE3E5B01C6AD77400682673 /* README.md */,

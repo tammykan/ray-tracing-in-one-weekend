@@ -104,21 +104,19 @@ int main(int argc, const char * argv[]) {
     
     myfile.open("output.ppm");
  
-    int nx = 400;
-    int ny = 300;
+    int nx = 600;
+    int ny = 500;
     int ns = 100;
     
     
     myfile << "P3\n" << nx << " " << ny << "\n255\n";
     
-    Vec3 lookFrom = Vec3(20, 20, 2);
+    Vec3 lookFrom = Vec3(0, 2, 4);
     Vec3 lookAt = Vec3(0, 0, -1);
     float dist_to_focus = (lookFrom - lookAt).length();
-    float aperture = 2.0;
+    float aperture = 0.4; // smaller -> less blur
     
-    Camera cam(lookFrom, lookAt, Vec3(0, 1, 0), 20,float(nx)/float(ny), aperture, dist_to_focus);
-    
-    float R = cos(M_PI/4);
+    Camera cam(lookFrom, lookAt, Vec3(0, 1, 0), 90,float(nx)/float(ny), aperture, dist_to_focus);
     
     Hitable *list[5];
     
